@@ -4,7 +4,6 @@ module Spree
       def index
         @search = Spree::Bank.ransack(params[:q])
         @banks = @search.result.page(params[:page])
-        # @banks = Spree::Bank.page(params[:page])
       end
 
       def toggle_activation
