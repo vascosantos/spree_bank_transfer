@@ -2,7 +2,9 @@ module Spree
   module Admin
     class BanksController < ResourceController
       def index
-        @banks = Spree::Bank.page(params[:page])
+        @search = Spree::Bank.ransack(params[:q])
+        @banks = @search.result.page(params[:page])
+        # @banks = Spree::Bank.page(params[:page])
       end
 
       def toggle_activation

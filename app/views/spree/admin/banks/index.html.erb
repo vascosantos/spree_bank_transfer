@@ -1,25 +1,21 @@
-<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<%= render :partial => 'spree/admin/shared/sub_menu/configuration' %>
 
 <% content_for :page_title do %>
   <%= Spree.t(:listing_banks) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_bank), new_admin_bank_path %>
-  </li>
+  <%= button_link_to Spree.t(:new_bank), new_admin_bank_path, :class => "btn-success", :icon => 'add', :id => 'admin_new_bank_link'%>
 <% end %>
 
 <%= paginate @banks %>
 
-<table class='index'>
+<table class='table' id="listing_banks" data-hook>
   <thead>
-    <tr>
-      <th><%= Spree.t(:bank_name) %></th>
-      <th><%= Spree.t(:account_no) %></th>
-      <th><%= Spree.t(:additional_details) %></th>
-      <th><%= Spree.t(:status) %></th>
-    </tr>
+    <th><%= sort_link @search, :name, Spree.t(:bank_name) %></th>
+    <th><%= sort_link @search, :account_no, Spree.t(:account_no) %></th>
+    <th><%= Spree.t(:additional_details) %></th>
+    <th><%= sort_link @search, :status, Spree.t(:status) %></th>
   </thead>
 
   <tbody>
