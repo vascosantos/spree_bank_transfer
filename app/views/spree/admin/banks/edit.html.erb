@@ -1,2 +1,13 @@
-<h1><%= Spree.t(:edit_bank) %></h1>
-<%= render :partial => 'form' %>
+<% content_for :page_title do %>
+  <%= Spree.t(:edit_bank) %>
+<% end %>
+
+<div data-hook="admin_bank_edit_form">
+  <%= form_for [:admin, @bank] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div data-hook="admin_bank_edit_form_buttons">
+      <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+    </div>
+  <% end %>
+</div>
