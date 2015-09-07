@@ -6,7 +6,7 @@ en:
     back_to_banks_list: Back to Banks list
     banks: Banks
     bank_name: Bank Name
-    confirm_details_submit: Are you sure you want to Submit these details? You will not be able to Edit these details once Submitted. Press 'OK' to confirm.
+    confirm_details_submit: Are you sure you want to Submit these details? You will not be able to edit these details once submitted. Press 'OK' to confirm.
     deactivate: Deactivate
     deposited_on: Deposited on
     how_bank_transfer_works: How Bank Transfer works?

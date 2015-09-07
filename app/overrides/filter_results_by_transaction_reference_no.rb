@@ -8,15 +8,10 @@ Deface::Override.new(
         <div class="form-group">
           <div class="checkbox">
             <%= label_tag 'q_transref_not_null' do %>
-              <%= f.check_box :payments_transaction_reference_no_not_null %>
+              <%= f.check_box :payments_transaction_reference_no_not_null, {:checked => (params[:q][:payments_transaction_reference_no_not_null] == '1')}, '1', '' %>
               <%= Spree.t(:only_show_orders_with_bank_transfer_payment_reference_number) %>
             <% end %>
           </div>
-        </div>
-
-        <div class="form-group">
-          <%= label_tag :q_payment_state, Spree.t(:payment_state) %>
-          <%= f.select :payments_state_eq, Spree::Payment.state_machines[:state].states.collect {|s| [s.name, s.value]}, {:include_blank => true}, :class => 'select2' %>
         </div>
       </div>
     </div>
