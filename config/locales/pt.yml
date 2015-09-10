@@ -1,6 +1,6 @@
 pt:
   spree:
-    account_no: Número de conta
+    account_no: IBAN
     add_details: Adicionar detalhes
     additional_details: Mais detalhes
     back_to_banks_list: Voltar à lista de contas
