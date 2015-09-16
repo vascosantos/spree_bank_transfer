@@ -15,7 +15,8 @@ Deface::Override.new(
         </div>
       </div>
     </div>
-  }
+  },
+  :original => '9c6fa47062ff375693153a9f0b97e1a5e975c8f1'
 )       
 
 
