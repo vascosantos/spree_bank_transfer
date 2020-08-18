@@ -1,4 +1,4 @@
-Spree::Payment.class_eval do
+module Spree::PaymentDecorator
   attr_accessor :validate_bank_details
   validates :bank_name, :account_no, :transaction_reference_no, :deposited_on, :presence => true, :if => :validate_bank_details
 
@@ -8,3 +8,5 @@ Spree::Payment.class_eval do
     transaction_reference_no?
   end
 end
+
+::Spree::Payment.prepend(Spree::PaymentDecorator)
