@@ -12,7 +12,7 @@ class PaymentDetails
       errors << "Payment Details can be submitted only once."
     else
       payment.validate_bank_details = true
-      unless payment.update_attributes(params)
+      unless payment.update(params)
         errors << payment.errors.full_messages.to_sentence
       end
     end
